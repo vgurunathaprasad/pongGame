@@ -90,17 +90,32 @@ while True:
 
     # Border checking
     if ball.ycor() > 290:
+        # if not running on windows comment line below
         winsound.PlaySound('bounce.wav',winsound.SND_ASYNC)
+        # for linux uncomment
+        #os.system('aplay bounce.wav&')
+        # for mac uncomment
+        #os.system('afplay bounce.wav&')
         ball.sety(290)
         ball.dy *= -1
 
     if ball.ycor() < -290:
+        # if not running on windows comment line below
         winsound.PlaySound('bounce.wav',winsound.SND_ASYNC)
+        # for linux uncomment
+        #os.system('aplay bounce.wav&')
+        # for mac uncomment
+        #os.system('afplay bounce.wav&')
         ball.sety(-290)
         ball.dy *= -1
 
     if ball.xcor() > 390:
+        # if not running on windows comment line below
         winsound.PlaySound('bounce.wav',winsound.SND_ASYNC)
+        # for linux uncomment
+        #os.system('aplay bounce.wav&')
+        # for mac uncomment
+        #os.system('afplay bounce.wav&')
         ball.goto(0,0)
         ball.dx *= -1
         score_a += 1
@@ -109,7 +124,12 @@ while True:
         
         
     if ball.xcor() < -390:
+        # if not running on windows comment line below
         winsound.PlaySound('bounce.wav',winsound.SND_ASYNC)
+        # for linux uncomment
+        #os.system('aplay bounce.wav&')
+        # for mac uncomment
+        #os.system('afplay bounce.wav&')
         ball.goto(0,0)
         ball.dx *= -1
         score_b +=1
@@ -118,11 +138,21 @@ while True:
         
     # Paddle and ball collision
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
-        ball.setx(340)
+        # if not running on windows comment line below
         winsound.PlaySound('bounce.wav',winsound.SND_ASYNC)
+        # for linux uncomment
+        #os.system('aplay bounce.wav&')
+        # for mac uncomment
+        #os.system('afplay bounce.wav&')
+        ball.setx(340)
         ball.dx *= -1
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
-        ball.setx(-340)
+        # if not running on windows comment line below
         winsound.PlaySound('bounce.wav',winsound.SND_ASYNC)
+        # for linux uncomment
+        #os.system('aplay bounce.wav&')
+        # for mac uncomment
+        #os.system('afplay bounce.wav&')
+        ball.setx(-340)
         ball.dx *= -1
